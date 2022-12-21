@@ -18,7 +18,7 @@ public class AnotherActivity extends Activity implements View.OnClickListener {
         setContentView(binding.getRoot());
         findViewById(R.id.finish).setOnClickListener(this);
         Intent intent = getIntent();
-        binding.hello.setText("Привет,"+ intent.getStringExtra("Name"));
+        binding.hello.setText( "Привет, "+intent.getStringExtra("Name"));
     }
 
     @Override

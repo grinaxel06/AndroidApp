@@ -45,8 +45,9 @@ public class PostAdapter  extends ArrayAdapter<Posts> {
             binding.commentLayout.setOnClickListener(view -> {
                 posts.plusComments();
                 Intent intent =new Intent(getContext(), AnotherActivity.class);
+                intent.putExtra("Name",posts.getName() );
                 getContext().startActivity(intent);
-                intent.putExtra("Name",binding.postName.getText().toString());
+                notifyDataSetInvalidated();
             });
             binding.shareLayout.setOnClickListener(view -> {
                 Toast.makeText(getContext(), "Shared" , Toast.LENGTH_SHORT).show();
